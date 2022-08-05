@@ -1,9 +1,10 @@
-import { Box, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, SimpleGrid } from '@chakra-ui/react';
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import Navigation from '../components/Navigation';
 import SearchBar from '../components/SearchBar';
+import ToggleLanguage from '../components/ToggleLanguage';
 import Layout from '../layouts';
 
 function AdminPortal() {
@@ -43,9 +44,10 @@ function AdminPortal() {
         h={'100vh'}
       >
         <Navigation />
-        <Box py={'16px'}>
+        <Flex py={'16px'} justifyContent="space-between" alignItems={'center'}>
           <SearchBar value={searchTerm} onSearch={onSearch} />
-        </Box>
+          <ToggleLanguage />
+        </Flex>
 
         <SimpleGrid columns={{ lg: 2 }} spacing={5}>
           {article
